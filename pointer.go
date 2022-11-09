@@ -18,5 +18,12 @@ func main() {
 		fmt.Println("【ptr】的值是", &ptr)
 
 	}
+	fmt.Println("before... a的值是：", a)
+	var pointer *int = &a
+	pointerusage(pointer)
+	fmt.Println("after... a的值是：", a)
 
+}
+func pointerusage(pointer *int) {
+	*pointer = *pointer + 1
 }

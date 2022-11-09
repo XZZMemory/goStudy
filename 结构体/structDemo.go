@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unsafe"
+)
 
 type Books struct {
 	// 标题
@@ -16,6 +19,15 @@ type BorrowLog struct {
 }
 
 func main() {
+
+	initialOfStruct()
+	//
+	sizeOfEmptyStruct()
+
+}
+
+// 一、结构体的三种初始化方法
+func initialOfStruct() {
 
 	// 1.第一种初始化方法
 	var myBook Books
@@ -38,5 +50,19 @@ func main() {
 	fmt.Println(Books{"Go 语言", "www.runoob.com", "Go 语言教程", 6495407})
 	fmt.Println(myBorrowLog.userName, "借了本书：", myBorrowLog.book)
 	fmt.Println(relation.userName, "借了本书：", relation.book)
+}
 
+type complexS struct {
+	A struct{}
+	B struct{}
+}
+
+// 二、空结构体信息
+func sizeOfEmptyStruct() {
+	// 1.空结构体大小是0
+	var s struct{}
+	fmt.Println("空结构体大小是：", unsafe.Sizeof(s))
+	// 2.空结构体组成的组合类型
+	complex := complexS{}
+	fmt.Println("空结构体组成的组合类型大小是", unsafe.Sizeof(complex))
 }

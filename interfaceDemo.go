@@ -8,11 +8,12 @@ type Phone interface {
 
 // 定义手机结构
 type IPhone struct {
+	price int
 }
 
 // 为手机结构添加方法
-func (iPhone IPhone) call() {
-	fmt.Println("I am iPhone, I can call you!")
+func (iphone IPhone) call() {
+	fmt.Println("I am iPhone, I can call you!", iphone.price)
 }
 
 // 定义nokia手机结构
@@ -27,11 +28,12 @@ func (nokiaPhone NokiaPhone) call() {
 
 func main() {
 	var phone Phone
+	//
+	//phone = new(NokiaPhone)
+	//phone.call()
 
-	phone = new(NokiaPhone)
-	phone.call()
-
-	phone = new(IPhone)
+	phone = IPhone{price: 1}
+	//phone.price=
 	phone.call()
 
 }
