@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // 切片单测
 
@@ -16,4 +18,15 @@ func main() {
 	slice2[9] = 1
 	idendi[9] = 10
 	fmt.Println("切片数据：", slice2[9])
+	array := make([]string, 10)
+	array = append(array, "1")
+	array = append(array, "2")
+	for i, data := range array {
+		fmt.Println("i:", i, ", data:", data)
+
+	}
+	fmt.Println("测试", f1())
+
+	//mappingReversedValue.Load()
+
 }

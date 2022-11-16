@@ -19,5 +19,6 @@ func main() {
 	//	fmt.Println("capital is nil")
 	//}
 	fmt.Println("ok :", ok)
+	fmt.Println(countryCapitalMap["India "])
 
 }
