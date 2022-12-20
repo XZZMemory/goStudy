@@ -7,6 +7,10 @@ func main() {
 	var a int = 10
 	// 声明一个指针
 	var ip *int = &a
+	var data3 int16 = 19
+	var data4 int = int(data3)
+	fmt.Println("data4的值是：", data4)
+
 	fmt.Println("a的值是：", a)
 	fmt.Println("指针指向的地址是：", ip)
 	fmt.Println("指针指向值是：", *ip)
